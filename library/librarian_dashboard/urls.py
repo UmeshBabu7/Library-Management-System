@@ -9,4 +9,5 @@ router.register(r'borrowings', BorrowingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('librarian/dashboard/', librarian_dashboard, name='librarian_dashboard'),
 ]
