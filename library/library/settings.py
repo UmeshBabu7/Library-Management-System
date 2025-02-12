@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'borrowingservice_app',
     'librarian_dashboard',
     'member_dashboard',
+    'notificationservice_app',
+    'searchservice_app'
     
 ]
 
@@ -132,10 +134,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# celery
+
+# Celery Configuration
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_ACCEPT_CONTENT = ['json']
-ERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
