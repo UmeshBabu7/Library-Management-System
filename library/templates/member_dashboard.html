@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e7f3e7;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Member Dashboard</h1>
+    </header>
+    <main>
+        <h2>Borrowed Books</h2>
+        <ul>
+            {% for borrowing in borrowed_books %}
+                <li>{{ borrowing.book.title }} (Due: {{ borrowing.due_date }})</li>
+            {% endfor %}
+        </ul>
+        <h2>Overdue Books</h2>
+        <ul>
+            {% for borrowing in overdue_books %}
+                <li>{{ borrowing.book.title }} (Due: {{ borrowing.due_date }})</li>
+            {% endfor %}
+        </ul>
+        <h2>Borrowing History</h2>
+        <ul>
+            {% for borrowing in borrowing_history %}
+                <li>{{ borrowing.book.title }} (Borrowed on: {{ borrowing.borrow_date }}, Returned on: {{ borrowing.return_date }})</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

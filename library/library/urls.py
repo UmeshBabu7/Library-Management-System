@@ -8,4 +8,5 @@ urlpatterns = [
     path('member/',include('memberservice_app.urls')),
     path('borrowing/',include('borrowingservice_app.urls')),
     path('librarians/',include('librarian_dashboard.urls'), name='librarian_dashboard'),
+    path('membering/',include('member_dashboard.urls')),
 ]

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from datetime import date
-from borrowing_service.models import Borrowing
-from book_service.models import Book
+from borrowingservice_app.models import Borrowing
+from bookservice_app.models import Book
 from django.contrib.auth.decorators import login_required
 
 @login_required
