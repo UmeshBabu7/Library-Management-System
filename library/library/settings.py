@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'bookservice_app',
     'memberservice_app',
     'borrowingservice_app',
+    'librarian_dashboard',
     
 ]
 
