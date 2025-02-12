@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'bookservice_app',
+    'memberservice_app',
     
 ]
 
