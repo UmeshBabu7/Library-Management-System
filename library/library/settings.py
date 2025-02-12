@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'librarian_dashboard',
     'member_dashboard',
     'notificationservice_app',
-    'searchservice_app'
+    'searchservice_app',
+    'django_celery_beat',  # For periodic tasks
     
 ]
 
@@ -138,3 +139,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Celery Configuration
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+# Add periodic task to Celery beat schedule
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'check-overdue-books-every-day': {
+        'task': 'notification_service.tasks.check_overdue_books',
+        'schedule': crontab(hour=0, minute=0),  # Run every day at midnight
+    },
+}
