@@ -85,20 +85,20 @@ Provides search functionality for books and members.
 
 1. Build and run each service:
     ```
-    docker build -t book_service -f Dockerfile.book_service .
-    docker run -d -p 8000:8000 book_service
+    docker build -t book_service -f Dockerfile.bookservice_app .
+    docker run -d -p 8000:8000 bookservice_app
 
-    docker build -t member_service -f Dockerfile.member_service .
+    docker build -t member_service -f Dockerfile.memberservice_app .
     docker run -d -p 8001:8001 member_service
 
-    docker build -t borrowing_service -f Dockerfile.borrowing_service .
-    docker run -d -p 8002:8002 borrowing_service
+    docker build -t borrowing_service -f Dockerfile.borrowingservice_app .
+    docker run -d -p 8002:8002 borrowingservice_app
 
-    docker build -t notification_service -f Dockerfile.notification_service .
-    docker run -d -p 8003:8003 notification_service
+    docker build -t notification_service -f Dockerfile.notificationservice_app .
+    docker run -d -p 8003:8003 notificationservice_app
 
-    docker build -t search_service -f Dockerfile.search_service .
-    docker run -d -p 8004:8004 search_service
+    docker build -t search_service -f Dockerfile.searchservice_app .
+    docker run -d -p 8004:8004 searchservice_app
     ```
 
 # Usage
